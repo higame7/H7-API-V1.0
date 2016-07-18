@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8924860e503a4e2ca2bd6903309f713d" Name="Diagram1">
+        <EntityTypeShape EntityType="HiGame_V1Model.db_Article" Width="1.5" PointX="0.75" PointY="40.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_ArticleComment" Width="1.5" PointX="3" PointY="34.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_AssetRecord" Width="1.5" PointX="3" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_BarQRCode" Width="1.5" PointX="9.75" PointY="63.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_BarUser" Width="1.5" PointX="7.5" PointY="54.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_BoBo" Width="1.5" PointX="6" PointY="44.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_CommonUseHero" Width="1.5" PointX="7.5" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_Contribute" Width="1.5" PointX="3" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_DateFight" Width="1.5" PointX="5.25" PointY="60.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_DateFightScore" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_Episode" Width="1.5" PointX="3.75" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_EpisodeComment" Width="1.5" PointX="6" PointY="35.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_FightResult" Width="1.5" PointX="5.25" PointY="75.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_FightState" Width="1.5" PointX="7.5" PointY="57.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_Follow" Width="1.5" PointX="7.5" PointY="60.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_Game" Width="1.5" PointX="3" PointY="48.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_GameBoBo" Width="1.5" PointX="8.25" PointY="48.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_GameIDofUser" Width="1.5" PointX="3" PointY="30" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_GameInfoofPlatform" Width="1.5" PointX="5.25" PointY="29" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_GameRecord" Width="1.5" PointX="5.25" PointY="48.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_GuessAndVote" Width="1.5" PointX="5.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_GuessComment" Width="1.5" PointX="8" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_GuessFight" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_GuessFightLink" Width="1.5" PointX="11" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_GuessOption" Width="1.5" PointX="8" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_GuessRecord" Width="1.5" PointX="3" PointY="38.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_LiveVideo" Width="1.5" PointX="2.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_MatchGuess" Width="1.5" PointX="7.5" PointY="75.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_Message" Width="1.5" PointX="10.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_MyCollection" Width="1.5" PointX="3" PointY="42.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_NetBar" Width="1.5" PointX="5.25" PointY="54.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_Partner" Width="1.5" PointX="3.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_PartnerTime" Width="1.5" PointX="6" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_PlayRecord" Width="1.5" PointX="6.75" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_PlayRecordComment" Width="1.5" PointX="6" PointY="39.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_PlayRecordPartner" Width="1.5" PointX="9" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_PlayRecordUser" Width="1.5" PointX="9" PointY="34.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_QRCode" Width="1.5" PointX="7.5" PointY="63.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_Recruit" Width="1.5" PointX="5.25" PointY="69.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_Report" Width="1.5" PointX="3" PointY="54.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_SysMessage" Width="1.5" PointX="13" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_Team" Width="1.5" PointX="3" PointY="63.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_TeamBlog" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_TeamRemoveUser" Width="1.5" PointX="4.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_TeamUser" Width="1.5" PointX="5.25" PointY="72.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_UnAnswer" Width="1.5" PointX="7.5" PointY="66.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.db_User" Width="1.5" PointX="0.75" PointY="31" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiGame_V1Model.View_TeamUserGamePower" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_ARTIC_REFERENCE_DB_ARTIC" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_ARTIC_REFERENCE_DB_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_ASSET_REFERENCE_DB_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_BARQR_REFERENCE_DB_BARUS" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_BARQR_REFERENCE_DB_QRCOD" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_BARUS_REFERENCE_DB_NETBA" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_GAMEB_REFERENCE_DB_BOBO" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_COMMO_REFERENCE_DB_GAMEI" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_CONTR_REFERENCE_DB_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_DATEF_REFERENCE_DB_TEAM" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_DATEF_REFERENCE_DB_TEAM1" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_FIGHT_REFERENCE_DB_DATEF" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_FOLLO_REFERENCE_DB_DATEF" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_QRCOD_REFERENCE_DB_DATEF" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_UNANS_REFERENCE_DB_DATEF" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_EPISO_REFERENCE_DB_EPISO" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_EPISO_REFERENCE_DB_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_FIGHT_REFERENCE_DB_GAME" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_MATCH_REFERENCE_DB_FIGHT" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_GAMEB_REFERENCE_DB_GAME" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_GAMER_REFERENCE_DB_GAME" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_GAMEI_REFERENCE_DB_GAMEI" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_GAMEI_REFERENCE_DB_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_GAMER_REFERENCE_DB_TEAM" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_GAMER_REFERENCE_DB_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_GUESS_REFERENCE_DB_GFLink" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_GUESS_REFERENCE_DB_GUESS" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_GUESS_REFERENCE_DB_GUESS1" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_GUESS_REFERENCE_DB_GF" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_GUESS_REFERENCE_DB_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_SYSME_REFERENCE_DB_MESSA" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_MYCOL_REFERENCE_DB_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_PARTN_REFERENCE_DB_PARTN" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_PLAYR_REFERENCE_DB_PARTN1" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_PLAYR_REFERENCE_DB_PARTN2" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_PLAYR_REFERENCE_DB_PLAYR1" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_PLAYR_REFERENCE_DB_PLAYR2" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_PLAYR_REFERENCE_DB_PLAYR3" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_PLAYR_REFERENCE_DB_USER2" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_PLAYR_REFERENCE_DB_USER1" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_RECRU_REFERENCE_DB_TEAM" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_REPOR_REFERENCE_DB_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_TEAM_REFERENCE_DB_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="HiGame_V1Model.FK_DB_TEAMU_REFERENCE_DB_TEAM" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

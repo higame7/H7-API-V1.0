@@ -1,0 +1,1233 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RestAPI_HaiGame7</name>
+    </assembly>
+    <members>
+        <member name="M:RestAPI_HaiGame7.Areas.HelpPage.ApiDescriptionExtensions.GetFriendlyId(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Generates an URI-friendly ID for the <see cref="T:System.Web.Http.Description.ApiDescription"/>. E.g. "Get-Values-id_name" instead of "GetValues/{id}?name={name}"
+            </summary>
+            <param name="description">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The ID as a string.</returns>
+        </member>
+        <member name="T:RestAPI_HaiGame7.Areas.HelpPage.HelpPageConfig">
+            <summary>
+            Use this class to customize the Help Page.
+            For example you can set a custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> to supply the documentation
+            or you can provide the samples for the requests/responses.
+            </summary>
+        </member>
+        <member name="T:RestAPI_HaiGame7.Areas.HelpPage.Controllers.HelpController">
+            <summary>
+            The controller that will handle requests for the help page.
+            </summary>
+        </member>
+        <member name="M:RestAPI_HaiGame7.Areas.HelpPage.HelpPageConfigurationExtensions.SetDocumentationProvider(System.Web.Http.HttpConfiguration,System.Web.Http.Description.IDocumentationProvider)">
+            <summary>
+            Sets the documentation provider for help page.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="documentationProvider">The documentation provider.</param>
+        </member>
+        <member name="M:RestAPI_HaiGame7.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleObjects(System.Web.Http.HttpConfiguration,System.Collections.Generic.IDictionary{System.Type,System.Object})">
+            <summary>
+            Sets the objects that will be used by the formatters to produce sample requests/responses.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleObjects">The sample objects.</param>
+        </member>
+        <member name="M:RestAPI_HaiGame7.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type and action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:RestAPI_HaiGame7.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample request directly for the specified media type and action with parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:RestAPI_HaiGame7.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type of the action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:RestAPI_HaiGame7.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample response directly for the specified media type of the action with specific parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:RestAPI_HaiGame7.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForMediaType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Sets the sample directly for all actions with the specified media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+        </member>
+        <member name="M:RestAPI_HaiGame7.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Sets the sample directly for all actions with the specified type and media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The parameter type or return type of an action.</param>
+        </member>
+        <member name="M:RestAPI_HaiGame7.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:RestAPI_HaiGame7.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:RestAPI_HaiGame7.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:RestAPI_HaiGame7.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:RestAPI_HaiGame7.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <returns>The help page sample generator.</returns>
+        </member>
+        <member name="M:RestAPI_HaiGame7.Areas.HelpPage.HelpPageConfigurationExtensions.SetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration,RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleGenerator)">
+            <summary>
+            Sets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleGenerator">The help page sample generator.</param>
+        </member>
+        <member name="M:RestAPI_HaiGame7.Areas.HelpPage.HelpPageConfigurationExtensions.GetModelDescriptionGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the model description generator.
+            </summary>
+            <param name="config">The configuration.</param>
+            <returns>The <see cref="T:RestAPI_HaiGame7.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator"/></returns>
+        </member>
+        <member name="M:RestAPI_HaiGame7.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageApiModel(System.Web.Http.HttpConfiguration,System.String)">
+            <summary>
+            Gets the model that represents an API displayed on the help page. The model is initialized on the first call and cached for subsequent calls.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="apiDescriptionId">The <see cref="T:System.Web.Http.Description.ApiDescription"/> ID.</param>
+            <returns>
+            An <see cref="T:RestAPI_HaiGame7.Areas.HelpPage.Models.HelpPageApiModel"/>
+            </returns>
+        </member>
+        <member name="T:RestAPI_HaiGame7.Areas.HelpPage.ModelDescriptions.ModelDescription">
+            <summary>
+            Describes a type model.
+            </summary>
+        </member>
+        <member name="T:RestAPI_HaiGame7.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator">
+            <summary>
+            Generates model descriptions for given types.
+            </summary>
+        </member>
+        <member name="T:RestAPI_HaiGame7.Areas.HelpPage.ModelDescriptions.ModelNameAttribute">
+            <summary>
+            Use this attribute to change the name of the <see cref="T:RestAPI_HaiGame7.Areas.HelpPage.ModelDescriptions.ModelDescription"/> generated for a type.
+            </summary>
+        </member>
+        <member name="T:RestAPI_HaiGame7.Areas.HelpPage.Models.HelpPageApiModel">
+            <summary>
+            The model that represents an API displayed on the help page.
+            </summary>
+        </member>
+        <member name="M:RestAPI_HaiGame7.Areas.HelpPage.Models.HelpPageApiModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:RestAPI_HaiGame7.Areas.HelpPage.Models.HelpPageApiModel"/> class.
+            </summary>
+        </member>
+        <member name="P:RestAPI_HaiGame7.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription">
+            <summary>
+            Gets or sets the <see cref="P:RestAPI_HaiGame7.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription"/> that describes the API.
+            </summary>
+        </member>
+        <member name="P:RestAPI_HaiGame7.Areas.HelpPage.Models.HelpPageApiModel.UriParameters">
+            <summary>
+            Gets or sets the <see cref="T:RestAPI_HaiGame7.Areas.HelpPage.ModelDescriptions.ParameterDescription"/> collection that describes the URI parameters for the API.
+            </summary>
+        </member>
+        <member name="P:RestAPI_HaiGame7.Areas.HelpPage.Models.HelpPageApiModel.RequestDocumentation">
+            <summary>
+            Gets or sets the documentation for the request.
+            </summary>
+        </member>
+        <member name="P:RestAPI_HaiGame7.Areas.HelpPage.Models.HelpPageApiModel.RequestModelDescription">
+            <summary>
+            Gets or sets the <see cref="T:RestAPI_HaiGame7.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the request body.
+            </summary>
+        </member>
+        <member name="P:RestAPI_HaiGame7.Areas.HelpPage.Models.HelpPageApiModel.RequestBodyParameters">
+            <summary>
+            Gets the request body parameter descriptions.
+            </summary>
+        </member>
+        <member name="P:RestAPI_HaiGame7.Areas.HelpPage.Models.HelpPageApiModel.ResourceDescription">
+            <summary>
+            Gets or sets the <see cref="T:RestAPI_HaiGame7.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the resource.
+            </summary>
+        </member>
+        <member name="P:RestAPI_HaiGame7.Areas.HelpPage.Models.HelpPageApiModel.ResourceProperties">
+            <summary>
+            Gets the resource property descriptions.
+            </summary>
+        </member>
+        <member name="P:RestAPI_HaiGame7.Areas.HelpPage.Models.HelpPageApiModel.SampleRequests">
+            <summary>
+            Gets the sample requests associated with the API.
+            </summary>
+        </member>
+        <member name="P:RestAPI_HaiGame7.Areas.HelpPage.Models.HelpPageApiModel.SampleResponses">
+            <summary>
+            Gets the sample responses associated with the API.
+            </summary>
+        </member>
+        <member name="P:RestAPI_HaiGame7.Areas.HelpPage.Models.HelpPageApiModel.ErrorMessages">
+            <summary>
+            Gets the error messages associated with this model.
+            </summary>
+        </member>
+        <member name="T:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleGenerator">
+            <summary>
+            This class will generate the samples for the help page.
+            </summary>
+        </member>
+        <member name="M:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleGenerator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleGenerator"/> class.
+            </summary>
+        </member>
+        <member name="P:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleGenerator.ActualHttpMessageTypes">
+            <summary>
+            Gets CLR types that are used as the content of <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/>.
+            </summary>
+        </member>
+        <member name="P:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples">
+            <summary>
+            Gets the objects that are used directly as samples for certain actions.
+            </summary>
+        </member>
+        <member name="P:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects">
+            <summary>
+            Gets the objects that are serialized as samples by the supported formatters.
+            </summary>
+        </member>
+        <member name="P:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories">
+            <summary>
+            Gets factories for the objects that the supported formatters will serialize as samples. Processed in order,
+            stopping when the factory successfully returns a non-<see langref="null"/> object.
+            </summary>
+            <remarks>
+            Collection includes just <see cref="M:RestAPI_HaiGame7.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)"/> initially. Use
+            <code>SampleObjectFactories.Insert(0, func)</code> to provide an override and
+            <code>SampleObjectFactories.Add(func)</code> to provide a fallback.</remarks>
+        </member>
+        <member name="M:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleGenerator.GetSampleRequests(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the request body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleGenerator.GetSampleResponses(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the response body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleGenerator.GetSample(System.Web.Http.Description.ApiDescription,RestAPI_HaiGame7.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Gets the request or response body samples.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleGenerator.GetActionSample(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.Type,System.Net.Http.Formatting.MediaTypeFormatter,System.Net.Http.Headers.MediaTypeHeaderValue,RestAPI_HaiGame7.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Search for samples that are provided directly through <see cref="P:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples"/>.
+            </summary>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="type">The CLR type.</param>
+            <param name="formatter">The formatter.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The sample that matches the parameters.</returns>
+        </member>
+        <member name="M:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleGenerator.GetSampleObject(System.Type)">
+            <summary>
+            Gets the sample object that will be serialized by the formatters. 
+            First, it will look at the <see cref="P:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects"/>. If no sample object is found, it will try to create
+            one using <see cref="M:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleGenerator.DefaultSampleObjectFactory(RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleGenerator,System.Type)"/> (which wraps an <see cref="T:RestAPI_HaiGame7.Areas.HelpPage.ObjectGenerator"/>) and other
+            factories in <see cref="P:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>The sample object.</returns>
+        </member>
+        <member name="M:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleGenerator.ResolveHttpRequestMessageType(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Resolves the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The type.</returns>
+        </member>
+        <member name="M:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleGenerator.ResolveType(System.Web.Http.Description.ApiDescription,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},RestAPI_HaiGame7.Areas.HelpPage.SampleDirection,System.Collections.ObjectModel.Collection{System.Net.Http.Formatting.MediaTypeFormatter}@)">
+            <summary>
+            Resolves the type of the action parameter or return value when <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/> is used.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or a response.</param>
+            <param name="formatters">The formatters.</param>
+        </member>
+        <member name="M:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleGenerator.WriteSampleObjectUsingFormatter(System.Net.Http.Formatting.MediaTypeFormatter,System.Object,System.Type,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Writes the sample object using formatter.
+            </summary>
+            <param name="formatter">The formatter.</param>
+            <param name="value">The value.</param>
+            <param name="type">The type.</param>
+            <param name="mediaType">Type of the media.</param>
+            <returns></returns>
+        </member>
+        <member name="T:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleKey">
+            <summary>
+            This is used to identify the place where the sample should be applied.
+            </summary>
+        </member>
+        <member name="M:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Creates a new <see cref="T:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleKey"/> based on media type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+        </member>
+        <member name="M:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Creates a new <see cref="T:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleKey"/> based on media type and CLR type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The CLR type.</param>
+        </member>
+        <member name="M:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleKey.#ctor(RestAPI_HaiGame7.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleKey"/> based on <see cref="P:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="sampleDirection">The <see cref="P:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,RestAPI_HaiGame7.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleKey"/> based on media type, <see cref="P:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The <see cref="P:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="P:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleKey.ControllerName">
+            <summary>
+            Gets the name of the controller.
+            </summary>
+            <value>
+            The name of the controller.
+            </value>
+        </member>
+        <member name="P:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleKey.ActionName">
+            <summary>
+            Gets the name of the action.
+            </summary>
+            <value>
+            The name of the action.
+            </value>
+        </member>
+        <member name="P:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleKey.MediaType">
+            <summary>
+            Gets the media type.
+            </summary>
+            <value>
+            The media type.
+            </value>
+        </member>
+        <member name="P:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleKey.ParameterNames">
+            <summary>
+            Gets the parameter names.
+            </summary>
+        </member>
+        <member name="P:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleKey.SampleDirection">
+            <summary>
+            Gets the <see cref="P:RestAPI_HaiGame7.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.
+            </summary>
+        </member>
+        <member name="T:RestAPI_HaiGame7.Areas.HelpPage.ImageSample">
+            <summary>
+            This represents an image sample on the help page. There's a display template named ImageSample associated with this class.
+            </summary>
+        </member>
+        <member name="M:RestAPI_HaiGame7.Areas.HelpPage.ImageSample.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RestAPI_HaiGame7.Areas.HelpPage.ImageSample"/> class.
+            </summary>
+            <param name="src">The URL of an image.</param>
+        </member>
+        <member name="T:RestAPI_HaiGame7.Areas.HelpPage.InvalidSample">
+            <summary>
+            This represents an invalid sample on the help page. There's a display template named InvalidSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:RestAPI_HaiGame7.Areas.HelpPage.ObjectGenerator">
+            <summary>
+            This class will create an object of a given type and populate it with sample data.
+            </summary>
+        </member>
+        <member name="M:RestAPI_HaiGame7.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)">
+            <summary>
+            Generates an object for a given type. The type needs to be public, have a public default constructor and settable public properties/fields. Currently it supports the following types:
+            Simple types: <see cref="T:System.Int32"/>, <see cref="T:System.String"/>, <see cref="T:System.Enum"/>, <see cref="T:System.DateTime"/>, <see cref="T:System.Uri"/>, etc.
+            Complex types: POCO types.
+            Nullables: <see cref="T:System.Nullable`1"/>.
+            Arrays: arrays of simple types or complex types.
+            Key value pairs: <see cref="T:System.Collections.Generic.KeyValuePair`2"/>
+            Tuples: <see cref="T:System.Tuple`1"/>, <see cref="T:System.Tuple`2"/>, etc
+            Dictionaries: <see cref="T:System.Collections.Generic.IDictionary`2"/> or anything deriving from <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+            Collections: <see cref="T:System.Collections.Generic.IList`1"/>, <see cref="T:System.Collections.Generic.IEnumerable`1"/>, <see cref="T:System.Collections.Generic.ICollection`1"/>, <see cref="T:System.Collections.IList"/>, <see cref="T:System.Collections.IEnumerable"/>, <see cref="T:System.Collections.ICollection"/> or anything deriving from <see cref="T:System.Collections.Generic.ICollection`1"/> or <see cref="T:System.Collections.IList"/>.
+            Queryables: <see cref="T:System.Linq.IQueryable"/>, <see cref="T:System.Linq.IQueryable`1"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>An object of the given type.</returns>
+        </member>
+        <member name="T:RestAPI_HaiGame7.Areas.HelpPage.SampleDirection">
+            <summary>
+            Indicates whether the sample is used for request or response
+            </summary>
+        </member>
+        <member name="T:RestAPI_HaiGame7.Areas.HelpPage.TextSample">
+            <summary>
+            This represents a preformatted text sample on the help page. There's a display template named TextSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:RestAPI_HaiGame7.Areas.HelpPage.XmlDocumentationProvider">
+            <summary>
+            A custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> that reads the API documentation from an XML documentation file.
+            </summary>
+        </member>
+        <member name="M:RestAPI_HaiGame7.Areas.HelpPage.XmlDocumentationProvider.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RestAPI_HaiGame7.Areas.HelpPage.XmlDocumentationProvider"/> class.
+            </summary>
+            <param name="documentPath">The physical path to XML document.</param>
+        </member>
+        <member name="T:RestAPI_HaiGame7.Controllers.GuessController">
+            <summary>
+            竞猜restful API，提供涉及到竞猜的服务。
+            </summary>
+        </member>
+        <member name="M:RestAPI_HaiGame7.Controllers.GuessController.GuessList">
+            <summary>
+            竞猜列表
+            </summary>
+            <returns>
+            无需传参，返回值实例：[{"MessageCode":0,"Message":null},
+            [{"GuessID":1,"GuessName":null,"STeamID":146,"STeamName":"伐木高","ETeamID":141,"ETeamName":"bugbug","MatchTime":null,"GuessType":"猜胜负","STeamOdds":1.30,"ETeamOdds":2.10,"EndTime":null,"AllMoney":0,"AllUser":0}]]
+            </returns>
+        </member>
+        <member name="M:RestAPI_HaiGame7.Controllers.GuessController.Bet(HaiGame7.Model.MyModel.GuessRecordModel)">
+            <summary>
+            下注
+            </summary>
+            <param name="guess">
+            传参：{GuessID:"1",UserID:"64",TeamID:"146",Money:"111",Odds:"1.5"}
+            </param>
+            <returns>
+            正常：[{"MessageCode":0,"Message":""}]
+            氦气不足：[{"MessageCode":60001,"Message":"氦气不足"}]
+            </returns>
+        </member>
+        <member name="M:RestAPI_HaiGame7.Controllers.GuessController.MyGuessList(HaiGame7.Model.MyModel.GuessParameterModel)">
+            <summary>
+            我的竞猜列表
+            </summary>
+            <param name="guess">
+            GuessID可以不传入，如果不传入是该用户下的竞猜记录
+            如果传入，是该用户某场竞猜下的记录。参数实例：{userid:64,guessid:1,startpage:1,pagecount:5}
+            </param>
+            <returns>
+            [{"MessageCode":0,"Message":""},
+            [{"EndTime":null,"MatchName":"精英小组赛一轮","STeamID":146,"STeamName":"伐木高","STeamLogo":"http://images.haigame7.com/logo/20160323173550XXKqu4W0Z5j3PxEIK0zW6uUR3LY=.png","ETeamID":141,"ETeamName":"bugbug","ETeamLogo":null,"BetTeamID":null,"BetTeamName":null,"BetTeamLogo":null,"GuessTime":"2016-01-01 01:01:01","Odds":0.51,"BetMoney":111},
+            {"EndTime":null,"MatchName":"精英小组赛一轮","STeamID":146,"STeamName":"伐木高","STeamLogo":"http://images.haigame7.com/logo/20160323173550XXKqu4W0Z5j3PxEIK0zW6uUR3LY=.png","ETeamID":141,"ETeamName":"bugbug","ETeamLogo":null,"BetTeamID":null,"BetTeamName":null,"BetTeamLogo":null,"GuessTime":"2016-03-26 22:00:38","Odds":2.10,"BetMoney":0},
+            {"EndTime":null,"MatchName":"精英小组赛一轮","STeamID":146,"STeamName":"伐木高","STeamLogo":"http://images.haigame7.com/logo/20160323173550XXKqu4W0Z5j3PxEIK0zW6uUR3LY=.png","ETeamID":141,"ETeamName":"bugbug","ETeamLogo":null,"BetTeamID":null,"BetTeamName":null,"BetTeamLogo":null,"GuessTime":"2016-03-26 22:00:59","Odds":2.10,"BetMoney":0},
+            {"EndTime":null,"MatchName":"精英小组赛一轮","STeamID":146,"STeamName":"伐木高","STeamLogo":"http://images.haigame7.com/logo/20160323173550XXKqu4W0Z5j3PxEIK0zW6uUR3LY=.png","ETeamID":141,"ETeamName":"bugbug","ETeamLogo":null,"BetTeamID":116,"BetTeamName":"奶粉哪去了","BetTeamLogo":"http://images.haigame7.com/logo/20160127164142XXKqu4W0Z5j3PxEIK0zW6uUR3LY=.png","GuessTime":"2016-03-26 22:06:14","Odds":2.10,"BetMoney":0},
+            {"EndTime":null,"MatchName":"精英小组赛一轮","STeamID":146,"STeamName":"伐木高","STeamLogo":"http://images.haigame7.com/logo/20160323173550XXKqu4W0Z5j3PxEIK0zW6uUR3LY=.png","ETeamID":141,"ETeamName":"bugbug","ETeamLogo":null,"BetTeamID":117,"BetTeamName":"type","BetTeamLogo":"http://images.haigame7.com/logo/20160127164454XXKqu4W0Z5j3PxEIK0zW6uUR3LY=.png","GuessTime":"2016-03-26 22:06:14","Odds":2.10,"BetMoney":0}]]
+            </returns>
+        </member>
+        <member name="T:RestAPI_HaiGame7.Controllers.VersionController">
+            <summary>
+            版本API
+            </summary>
+        </member>
+        <member name="M:RestAPI_HaiGame7.Controllers.VersionController.CurrentVersion">
+            <summary>
+            当前App版本
+            </summary>
+            <returns>
+            返回值：{"MessageCode":0,"Message":"版本号"}
+            </returns>
+        </member>
+        <member name="T:HaiGame7.RestAPI.Controllers.FightController">
+            <summary>
+            约战restful API，提供涉及到约战的服务。
+            </summary>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.FightController.AllFightList(HaiGame7.Model.MyModel.RankParameterModel)">
+            <summary>
+            约战动态列表
+            </summary>
+            <param name="rank">
+            参数说明：
+            startpage：页码
+            pagecount：每页记录数
+            参数实例：{"startpage":1,"pagecount":5}
+            </param>
+            <returns>
+            [{"MessageCode":0,"Message":""},
+            [{"Description":"战队【高1】接受战队【ddddd】的约战","FightTime":"2月22日","FightAsset":50},
+            {"Description":"战队【潜水泵战队】接受战队【国睡战队】的约战","FightTime":"2月24日","FightAsset":50},
+            {"Description":"战队【奶粉哪去了】接受战队【潜水泵战队】的约战","FightTime":"2月24日","FightAsset":1},
+            {"Description":"战队【aaaaaaaaaa】接受战队【国睡战队】的约战","FightTime":"2月24日","FightAsset":50},
+            {"Description":"战队【通天塔战队】接受战队【ddddd】的约战","FightTime":"2月25日","FightAsset":50},
+            {"Description":"战队【奶粉哪去了】向战队【通天塔战队】认怂","FightTime":"2月25日","FightAsset":50},
+            {"Description":"战队【通天塔战队】接受战队【通地塔】的约战","FightTime":"2月26日","FightAsset":50},
+            {"Description":"战队【huhaoran】向战队【通地塔】认怂","FightTime":"2月26日","FightAsset":2000},
+            {"Description":"战队【huhaoran】向战队【通地塔】认怂","FightTime":"2月26日","FightAsset":2000},
+            {"Description":"战队【訾1】接受战队【通天塔战队】的约战","FightTime":"2月26日","FightAsset":50}]]
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.FightController.MakeChallenge(HaiGame7.Model.MyModel.ChallengeParameterModel)">
+            <summary>
+            发起约战
+            </summary>
+            <param name="para">
+            </param>
+            <returns>
+            约战成功：[{"MessageCode":0,"Message":""}]
+            队员不能约战：[{"MessageCode":20004,"Message":"您是队员，不能发起约战"}]
+            超出每日限额：[{"MessageCode":20010,"Message":"超出约战限额，每天只可以约战一场"}]
+            氦气不足：[{"MessageCode":60001,"Message":"氦气不足"}]
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.FightController.MyFight(HaiGame7.Model.MyModel.FightParameterModel)">
+            <summary>
+            我的约战
+            </summary>
+            <param name="fight">
+            参数实例：{PhoneNumber:"13439843883",FightType:"Send",StartPage:1,PageCount:10}
+            </param>
+            <returns>
+            返回实例：[{"MessageCode":0,"Message":""},
+            [{"DateID":168,"STeamID":125,"ETeamID":124,"STeamName":"通天塔战队","ETeamName":"訾1","Money":50,"FightAddress":null,"CurrentState":"已应战","StateTime":"\/Date(-62135596800000)\/","StateTimeStr":"2016-02-26 13:06:35"}]]
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.FightController.Reject(HaiGame7.Model.MyModel.FightParameter2Model)">
+            <summary>
+            认怂
+            </summary>
+            <param name="fight">
+            参数实例：{UserID:61,DateID:111,Money:50}
+            </param>
+            <returns>
+            返回实例：[{"MessageCode":0,"Message":""}]
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.FightController.Accept(HaiGame7.Model.MyModel.FightParameter2Model)">
+            <summary>
+            应战
+            </summary>
+            <param name="fight">
+            参数实例：{UserID:61,DateID:111,Money:50}
+            </param>
+            <returns>
+            返回实例：[{"MessageCode":0,"Message":""}]
+            氦气不足：[{"MessageCode":60001,"Message":"氦气不足"}]
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.FightController.UpdateGameID(HaiGame7.Model.MyModel.FightParameter2Model)">
+            <summary>
+            上传比赛ID
+            </summary>
+            <param name="fight">
+            参数实例：{DateID:61,SFightAddress:"11111111"}
+            </param>
+            <returns></returns>
+        </member>
+        <member name="T:HaiGame7.RestAPI.Controllers.RankController">
+            <summary>
+            排行restful API，提供涉及到排行的服务。
+            </summary>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.RankController.UserRank(HaiGame7.Model.MyModel.RankParameterModel)">
+            <summary>
+            个人排行
+            </summary>
+            <param name="rank">
+            参数说明：
+            ranktype：排名类型 1.大神系数（GameGrade）2.氦气（Asset）3.战斗力（GamePower）
+            ranksort：排序 1.倒序（desc） 2.正序（asc）
+            startpage：页码
+            pagecount：每页记录数
+            参数实例：{"ranktype":"GamePower","ranksort":"desc","startpage":1,"pagecount":5}
+            </param>
+            <returns>
+            返回值实例：[{"MessageCode":0,"Message":""},
+            [{"NickName":null,"UserPicture":"","Hobby":null,"GameID":"106863163","GameGrade":"","GamePower":"0","Asset":774},
+            {"NickName":null,"UserPicture":"","Hobby":null,"GameID":"173032376","GameGrade":"","GamePower":"0","Asset":898},
+            {"NickName":null,"UserPicture":"","Hobby":null,"GameID":"89371588","GameGrade":"","GamePower":"0","Asset":1430},
+            {"NickName":null,"UserPicture":"","Hobby":null,"GameID":"10960902","GameGrade":"","GamePower":"1200","Asset":2622},
+            {"NickName":null,"UserPicture":"","Hobby":null,"GameID":"242950672","GameGrade":"","GamePower":"1804","Asset":10}]]
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.RankController.TeamRank(HaiGame7.Model.MyModel.RankParameterModel)">
+            <summary>
+            战队排行
+            </summary>
+            <param name="rank">
+            参数说明：
+            ranktype：排名类型 1.热度（HotScore）2.氦气（Asset）3.战斗力（FightScore）
+            ranksort：排序 1.倒序（desc） 2.正序（asc）
+            startpage：页码
+            pagecount：每页记录数
+            参数实例：{"ranktype":"HotScore","ranksort":"desc","startpage":1,"pagecount":5}
+            </param>
+            <returns>
+            返回值实例：[{"MessageCode":0,"Message":""},
+            [{"TeamName":"氦7硬邦邦","TeamPicture":"","TeamDescription":"我们是一群很硬的男人","HotScore":0,"FightScore":0,"Asset":0},
+            {"TeamName":"訾1","TeamPicture":"","TeamDescription":"qqq","HotScore":0,"FightScore":0,"Asset":0},
+            {"TeamName":"高1","TeamPicture":"","TeamDescription":"11","HotScore":6,"FightScore":0,"Asset":0},
+            {"TeamName":"奶粉哪去了","TeamPicture":"","TeamDescription":"专注真正好奶源，选择优质好奶粉","HotScore":3,"FightScore":0,"Asset":0},
+            {"TeamName":"huhaoran","TeamPicture":"","TeamDescription":"huhaoran","HotScore":6,"FightScore":0,"Asset":0}]]
+            </returns>
+        </member>
+        <member name="T:HaiGame7.RestAPI.Controllers.MatchController">
+            <summary>
+            赛事restful API，提供涉及到赛事的服务。
+            </summary>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.MatchController.MatchList">
+            <summary>
+            赛事列表
+            </summary>
+            <returns>
+            返回实例：[{"MessageCode":0,"Message":""},
+            [{"MatchID":4,"MatchName":"test","ShowPicture":"test","Introduce":"test"}]]
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.MatchController.BoBoList(HaiGame7.Model.MyModel.MatchModel)">
+            <summary>
+            主播列表
+            </summary>
+            <param name="match">
+            传入参数：{MatchID:"4"}
+            </param>
+            <returns>
+            返回值实例：
+            [{"MessageCode":0,"Message":""},
+            [{"MatchID":4,"Count":20,"TalkShow":"加入我吧","Name":"MM","UserPicture":"http://images.haigame7.com/avatar/20160128135746WxExqw0paJXAo1AtXc4RzGYo2LE=.png","Sex":"女","Introduce":"ZZZZZZZZZZZZZZZ","Age":null,"GameID":"12345"}]]
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.MatchController.BoBoCount(HaiGame7.Model.MyModel.MatchParameterModel)">
+             <summary>
+             主播已报名战队数
+             </summary>
+             <param name="match">
+             参数实例：{matchid:"4",boboid:"4"}
+             </param>
+             <returns>
+            返回实例值：[{"MessageCode":0,"Message":""},{"JoinCount":0}]
+             </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.MatchController.JoinMatch(HaiGame7.Model.MyModel.MatchParameter2Model)">
+            <summary>
+            报名参赛
+            </summary>
+            <param name="match">
+            参数实例：{matchid:"4",boboid:"4",TeamID:"11",PhoneNumber:"13439843883"}
+            </param>
+            <returns>
+            报名成功：[{"MessageCode":0,"Message":""}]
+            名额已满：[{"MessageCode":50002,"Message":"名额已满"}]
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.MatchController.QuitMatch(HaiGame7.Model.MyModel.MatchParameter2Model)">
+            <summary>
+            取消报名参赛
+            </summary>
+            <param name="match">
+            参数实例：{matchid:"4",boboid:"4",TeamID:"11",PhoneNumber:"13439843883"}
+            </param>
+            <returns>
+            返回实例：[{"MessageCode":0,"Message":""}]
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.MatchController.MyJoinMatch(HaiGame7.Model.MyModel.MatchParameter2Model)">
+            <summary>
+            只传两个参数，参数实例：{matchid:"4",TeamID:"11"}
+            </summary>
+            <param name="match">
+            [{"MessageCode":0,"Message":""}，{Name:"MM",ApplyTime:"2015-01-01 11:11:11"}]
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.MatchController.MyMatchList(HaiGame7.Model.MyModel.MatchParameter3Model)">
+            <summary>
+            我的赛事列表
+            </summary>
+            <param name="match">
+            参数实例：{UserID:64,State:0,StartPage:1,PageCount:5}
+            </param>
+            <returns>
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.MatchController.MatchDateList(HaiGame7.Model.MyModel.MatchParameterModel)">
+            <summary>
+            主播赛程日期列表
+            </summary>
+            <param name="match">
+            参数实例：{MatchID:4,BoBoID:1}
+            </param>
+            <returns>
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.MatchController.BoBoMatchList(HaiGame7.Model.MyModel.MatchParameterModel)">
+            <summary>
+            主播赛程列表
+            </summary>
+            <param name="match">
+            参数实例：{MatchID:4,BoBoID:1,MatchTime:"2016-02-01"}
+            </param>
+            <returns>
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.MatchController.MatchState(HaiGame7.Model.MyModel.MatchParameterModel)">
+            <summary>
+            赛事状态
+            </summary>
+            <param name="match">
+            参数实例：{MatchID:4}
+            </param>
+            <returns></returns>
+        </member>
+        <member name="T:HaiGame7.RestAPI.Controllers.TeamController">
+            <summary>
+            战队中心restful API，提供涉及到用户的服务。
+            </summary>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.TeamController.MyTeam(HaiGame7.Model.MyModel.SimpleTeamModel)">
+            <summary>
+            我的默认战队
+            </summary>
+            <param name="team">
+            参数实例：{CreatUserID:64}
+            </param>
+            <returns>
+            返回值实例：[{"MessageCode":0,"Message":null},
+            {"Creater":64,"TeamName":"訾1","TeamLogo":"http://images.haigame7.com/logo/20160215144709XXKqu4W0Z5j3PxEIK0zW6uUR3LY=.png","TeamDescription":"qqq","TeamType":"DOTA2","FightScore":0,"Asset":0,"IsDeault":0,"WinCount":null,"LoseCount":null,"FollowCount":null,"Role":"teamcreater","CreateTime":"2016-10-01/"}]
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.TeamController.MyAllTeam(HaiGame7.Model.MyModel.SimpleTeamModel)">
+            <summary>
+            我的所有战队
+            </summary>
+            <param name="team">
+            参数实例：{CreatUserID:64}
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.TeamController.GetTeambyID(HaiGame7.Model.MyModel.TeamParameterModel)">
+            <summary>
+            根据战队ID获取战队信息
+            </summary>
+            <param name="team">
+            参数实例：{TeamID:146}
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.TeamController.SetDefaultTeam(HaiGame7.Model.MyModel.SimpleTeamModel)">
+            <summary>
+            设置默认战队
+            </summary>
+            <param name="team">
+            参数实例：{CreatUserID:65,TeamName:"氦7"}
+            </param>
+            <returns>
+            设置成功：{"MessageCode":0,"Message":""}
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.TeamController.Create(HaiGame7.Model.MyModel.SimpleTeamModel)">
+            <summary>
+            创建战队
+            </summary>
+            <param name="team">
+            参数实例：{CreatUserID:65,TeamName:"氦7",TeamLogo:"图片url",TeamType:"DOTA2"}
+            </param>
+            <returns>
+            创建成功：{"MessageCode":0,"Message":""}
+            战队名称已存在：{"MessageCode":20001,"Message":"team exist"}
+            无权创建：{"MessageCode":20002,"Message":"you are teamuser"}
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.TeamController.Update(HaiGame7.Model.MyModel.SimpleTeam2Model)">
+            <summary>
+            更新战队信息
+            </summary>
+            <param name="para">
+            参数实例：{TeamID:65,TeamName:"氦7",TeamLogo:"Base64字符",TeamDescription:"XXXX"}
+            </param>
+            <returns>
+            更新成功：[{"MessageCode":0,"Message":""}]
+            战队名被占用：[{"MessageCode":200001,"Message":"team exist"}]
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.TeamController.Delete(HaiGame7.Model.MyModel.SimpleTeamModel)">
+            <summary>
+            解散战队
+            </summary>
+            <param name="team">
+            {"CreatUserID":61,"TeamName":"ABC"}
+            </param>
+            <returns>
+            解散成功：{"MessageCode":0,"Message":""}
+            无权解散：{"MessageCode":20009,"Message":"you cannot delete team"}
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.TeamController.TeamList(HaiGame7.Model.MyModel.TeamListParameterModel)">
+            <summary>
+            根据不同条件，获取战队列表
+            </summary>
+            <param name="para">
+            type：1.createdate 注册日期 2.userfightscore 个人战斗力匹配 3.teamfightscore 战队战斗力匹配
+            参数实例：{"createUserID":111,"Type":"createdate","Sort":"desc","StartPage":1,"PageCount":10}
+            </param>
+            <returns>
+            返回值实例：[{"MessageCode":0,"Message":null},
+            [{"Creater":92,"TeamName":"氦7通天塔","TeamLogo":"http://images.haigame7.com/logo/20160308160716XXKqu4W0Z5j3PxEIK0zW6uUR3LY=.png","TeamDescription":"GTMA","TeamType":"DOTA2","FightScore":0,"Asset":0,"IsDeault":0,"WinCount":0,"LoseCount":0,"FollowCount":1,"Role":null,"CreateTime":"2016-03-08"},
+            {"Creater":65,"TeamName":"孟庆丰","TeamLogo":"http://images.haigame7.com/logo/20160308160601XXKqu4W0Z5j3PxEIK0zW6uUR3LY=.png","TeamDescription":"123","TeamType":"DOTA2","FightScore":0,"Asset":0,"IsDeault":1,"WinCount":0,"LoseCount":0,"FollowCount":0,"Role":null,"CreateTime":"2016-03-08"},
+            {"Creater":65,"TeamName":"123","TeamLogo":"http://images.haigame7.com/logo/20160308160540XXKqu4W0Z5j3PxEIK0zW6uUR3LY=.png","TeamDescription":"123","TeamType":"DOTA2","FightScore":0,"Asset":0,"IsDeault":1,"WinCount":0,"LoseCount":0,"FollowCount":0,"Role":null,"CreateTime":"2016-03-08"},
+            {"Creater":66,"TeamName":"平平一","TeamLogo":"http://images.haigame7.com/logo/20160229170559XXKqu4W0Z5j3PxEIK0zW6uUR3LY=.png","TeamDescription":"栽植有东西","TeamType":"DOTA2","FightScore":0,"Asset":0,"IsDeault":1,"WinCount":0,"LoseCount":0,"FollowCount":0,"Role":null,"CreateTime":"2016-02-29"},
+            {"Creater":65,"TeamName":"bugbug","TeamLogo":"http://images.haigame7.com/logo/20160229170507XXKqu4W0Z5j3PxEIK0zW6uUR3LY=.png","TeamDescription":"DebugDebugDebugDebug","TeamType":"DOTA2","FightScore":0,"Asset":0,"IsDeault":1,"WinCount":0,"LoseCount":0,"FollowCount":0,"Role":null,"CreateTime":"2016-02-29"}]]
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.TeamController.MyApplyTeamList(HaiGame7.Model.MyModel.ApplyTeamParameterModel)">
+            <summary>
+            我的申请列表
+            </summary>
+            <param name="para">
+            参数实例：{UserID:64,StartPage:1,PageCount:5}
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.TeamController.MyInvitedTeamList(HaiGame7.Model.MyModel.ApplyTeamParameterModel)">
+            <summary>
+            我的受邀列表
+            </summary>
+            <param name="para">
+            参数实例：{UserID:64,StartPage:1,PageCount:5}
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.TeamController.ApplyTeam(HaiGame7.Model.MyModel.ApplyTeamParameterModel)">
+            <summary>
+            申请加入
+            </summary>
+            <param name="para">
+            参数实例：{UserID:64,TeamID:146,StartPage:1,PageCount:5}
+            </param>
+            <returns>
+            加入成功：{"MessageCode":0,"Message":""}
+            已加入其它战队：{"MessageCode":20006,"Message":"already join other team"}
+            已向该战队发出过申请：{"MessageCode":20007,"Message":"already apply this team"}
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.TeamController.RecruitList(HaiGame7.Model.MyModel.ApplyTeamParameterModel)">
+            <summary>
+            招募信息列表
+            </summary>
+            <param name="para">
+             参数实例：{UserID:64,TeamID:146,StartPage:1,PageCount:5}
+            </param>
+            <returns>
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.TeamController.SendRecruit(HaiGame7.Model.MyModel.RecruitParameterModel)">
+            <summary>
+            发布招募
+            </summary>
+            <param name="para">
+            参数实例：{TeamID:146,Content:"招募信息"}
+            </param>
+            <returns>
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.TeamController.InviteUser(HaiGame7.Model.MyModel.InviteUserParameterModel)">
+            <summary>
+            邀请队员
+            </summary>
+            <param name="para">
+            参数实例：{TeamID:146,UserID:64}
+            </param>
+            <returns>
+            
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.TeamController.InvitedUserList(HaiGame7.Model.MyModel.ApplyTeamParameterModel)">
+            <summary>
+            发出邀请列表
+            </summary>
+            <param name="para">
+            参数实例：{TeamID:146,StartPage:1,PageCount:5}
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.TeamController.ApplyUserList(HaiGame7.Model.MyModel.ApplyTeamParameterModel)">
+            <summary>
+            申请加入列表
+            </summary>
+            <param name="para">
+            参数实例：{TeamID:146,StartPage:1,PageCount:5}
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.TeamController.HandleMyInvited(HaiGame7.Model.MyModel.ApplyTeamParameter2Model)">
+            <summary>
+            我的受邀操作【同意or拒绝】
+            </summary>
+            <param name="para">
+            ISOK:0 同意，1 拒绝
+            参数实例：{TeamID:146,UserID:1,MessageID:5,ISOK:0}
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.TeamController.HandleMyApply(HaiGame7.Model.MyModel.ApplyTeamParameter2Model)">
+            <summary>
+            申请加入操作【同意or拒绝】
+            </summary>
+            <param name="para">
+            ISOK:0 同意，1 拒绝
+            参数实例：{TeamID:146,UserID:1,MessageID:5,ISOK:0}
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.TeamController.RemoveUser(HaiGame7.Model.MyModel.ApplyTeamParameter2Model)">
+            <summary>
+            移出战队
+            </summary>
+            <param name="para">
+            参数实例：{TeamID:146,UserID:1}
+            </param>
+            <returns></returns>
+        </member>
+        <member name="T:HaiGame7.RestAPI.Controllers.UserController">
+            <summary>
+            用户中心restful API，提供涉及到用户的服务。
+            </summary>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.UserController.Login(HaiGame7.Model.MyModel.SimpleUserModel)">
+            <summary>
+            登录
+            </summary>
+            <returns>
+            登录成功：{"MessageCode":0,"Message":""}
+            手机号不存在：{"MessageCode":10001,"Message":"no user"}
+            密码错误：{"MessageCode":10002,"Message":"password error"}
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.UserController.VerifyCode1(HaiGame7.Model.MyModel.SimpleUserModel)">
+            <summary>
+            获取验证码（注册用）
+            </summary>
+            <returns>
+            获取成功：{"MessageCode":0,"Message":"验证码"}
+            获取失败：{"MessageCode":10003,"Message":"verfitycode error"}
+            手机号已注册：{"MessageCode":10004,"Message":"user exist"}
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.UserController.VerifyCode2(HaiGame7.Model.MyModel.SimpleUserModel)">
+            <summary>
+            获取验证码（找回密码用）
+            </summary>
+            <returns>
+            获取成功：{"MessageCode":0,"Message":"验证码"}
+            手机号不存在：{"MessageCode":10001,"Message":"no user"}
+            验证码获取失败：{"MessageCode":10003,"Message":"verfitycode error"}
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.UserController.Register(HaiGame7.Model.MyModel.SimpleUserModel)">
+            <summary>
+            注册
+            </summary>
+            <returns>
+            注册成功：{"MessageCode":0,"Message":""}
+            手机号已存在：{"MessageCode":10004,"Message":"user exist"}
+            验证码错误：{"MessageCode":10005,"Message":"verifycode error"}
+            验证码过期：{"MessageCode":10006,"Message":"verifycode expire"}
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.UserController.ResetPassWord(HaiGame7.Model.MyModel.SimpleUserModel)">
+            <summary>
+            重置密码
+            </summary>
+            <returns>
+            重置成功：{"MessageCode":0,"Message":""}
+            手机号不存在：{"MessageCode":10001,"Message":"no user"}
+            验证码错误：{"MessageCode":10005,"Message":"verifycode error"}
+            验证码过期：{"MessageCode":10006,"Message":"verifycode expire"}
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.UserController.UserInfo(HaiGame7.Model.MyModel.SimpleUserModel)">
+            <summary>
+            根据手机号获取个人信息
+            </summary>
+            <param name="user"></param>
+            <returns>
+            返回值实例：[{"MessageCode":0,"Message":""},
+            {"UserID":64,UserInfo,"PassWord":null,"UserWebPicture":"http://images.haigame7.com/avatar/20160127162940WxExqw0paJXAo1AtXc4RzGYo2LE=.png","UserWebNickName":"不服","UserName":null,"Address":"北京-大兴区","Sex":"男","Birthday":"2016-03-18","Hobby":null}]
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.UserController.UserInfoByNickName(HaiGame7.Model.MyModel.SimpleUserModel)">
+            <summary>
+            根据昵称获取个人信息
+            </summary>
+            <param name="user"></param>
+            <returns>
+            返回值实例：[{"MessageCode":0,"Message":""},
+            {"UserID":64,"PhoneNumber":"13439843883","PassWord":null,"UserWebPicture":"http://images.haigame7.com/avatar/20160127162940WxExqw0paJXAo1AtXc4RzGYo2LE=.png","UserWebNickName":"不服","UserName":null,"Address":"北京-大兴区","Sex":"男","Birthday":"2016-03-18","Hobby":null}]
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.UserController.UserInfoByUserID(HaiGame7.Model.MyModel.UserParameterModel)">
+            <summary>
+            根据昵称获取个人信息
+            </summary>
+            <param name="user">
+            {"UserID":184,"Message":""}
+            </param>
+            <returns>
+            返回值实例：[{"MessageCode":0,"Message":""}]
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.UserController.UpdateUserInfo(HaiGame7.Model.MyModel.UserModel)">
+            <summary>
+            更改个人信息，传入手机号和要更改的字段，不更改字段不要传
+            </summary>
+            <param name="user"></param>
+            <returns>
+            更改成功：{"MessageCode":0,"Message":""}
+            用户不存在：{"MessageCode":10001,"Message":"no user"}
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.UserController.MyGameInfo(HaiGame7.Model.MyModel.SimpleUserModel)">
+            <summary>
+            我的游戏数据
+            </summary>
+            <param name="user"></param>
+            <returns>
+            返回值实例：[{"MessageCode":0,"Message":""},
+            {"UserID":64,"GameID":"173032376","GamePower":"0","CertifyState":0,"CertifyName":"氦七G9SJkIJQ8l+uZP4BJEVZ+aHEtLY="}]
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.UserController.UpdateCertifyGameID(HaiGame7.Model.MyModel.SimpleUserModel)">
+            <summary>
+            更改认证游戏ID
+            </summary>
+            <param name="user"></param>
+            <returns>
+            提交成功：{"MessageCode":0,"Message":返回认证昵称}
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.UserController.CertifyGameID(HaiGame7.Model.MyModel.SimpleUserModel)">
+            <summary>
+            提交认证游戏ID
+            </summary>
+            <param name="user"></param>
+            <returns>
+            提交成功：{"MessageCode":0,"Message":返回认证昵称}
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.UserController.MyAssetList(HaiGame7.Model.MyModel.UserParameterModel)">
+            <summary>
+            我的资产列表
+            </summary>
+            <param name="user">
+            参数实例：{UserID:184,StartPage:1,PageCount:10}
+            </param>
+            <returns>
+            返回值实例：[{"MessageCode":0,"Message":""},
+            [{"VirtualMoney":0,"GainTime":"2016-02-27","GainWay":"现金充值","Remark":"2016/2/27 12:38:35 现金充值 获得虚拟币：0"},
+            {"VirtualMoney":0,"GainTime":"2016-02-27","GainWay":"现金充值","Remark":"2016/2/27 12:38:24 现金充值 获得虚拟币：0"},
+            {"VirtualMoney":-50,"GainTime":"2016-02-26","GainWay":"接受挑战","Remark":"2016/2/26 13:06:35 接受挑战 消费虚拟币：-50"},
+            {"VirtualMoney":-50,"GainTime":"2016-02-15","GainWay":"接受挑战","Remark":"2016/2/15 13:15:22 接受挑战 消费虚拟币：-50"},
+            {"VirtualMoney":-1,"GainTime":"2016-02-15","GainWay":"参加竞猜","Remark":"2016/2/15 13:06:52 参加竞猜 消费虚拟币：-1"},
+            {"VirtualMoney":-1,"GainTime":"2016-01-28","GainWay":"参加竞猜","Remark":"2016/1/28 10:50:20 参加竞猜 消费虚拟币：-1"},
+            {"VirtualMoney":1000,"GainTime":"2016-01-27","GainWay":"注册","Remark":"2016/1/27 13:28:46 注册 获得虚拟币：50"}]]
+            ]
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.UserController.MyTotalAsset(HaiGame7.Model.MyModel.SimpleUserModel)">
+            <summary>
+            我的总资产，返回总氦气，和我的资产排名
+            </summary>
+            <param name="user"></param>
+            <returns>
+            返回值实例：[{"MessageCode":0,"Message":""},{"TotalAsset":"898","MyRank":"8"}]
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.UserController.NoTeamUserList(HaiGame7.Model.MyModel.UserListParameterModel)">
+            <summary>
+            未加入战队用户列表
+            </summary>
+            <param name="para">
+            {StartPage:1,PageCount:5}
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.UserController.MyMessage(HaiGame7.Model.MyModel.UserParameterModel)">
+            <summary>
+            我的消息
+            </summary>
+            <param name="para">
+            {UserID:64,StartPage:1,PageCount:5}
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.UserController.SetMessageRead(HaiGame7.Model.MyModel.MyMessageModel)">
+            <summary>
+            消息设为已读
+            </summary>
+            <param name="para"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.UserController.DeleteMessage(HaiGame7.Model.MyModel.MyMessageModel)">
+            <summary>
+            删除消息
+            </summary>
+            <param name="para">
+             {MessageID:64}
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.UserController.DeleteAssetRecord(HaiGame7.Model.MyModel.AssetModel)">
+            <summary>
+            删除微信支付订单
+            </summary>
+            <param name="para">
+            {OutTradeno:"133333333333333"}
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.UserController.SignIn(HaiGame7.Model.MyModel.UserParameterModel)">
+            <summary>
+            每日签到奖励1氦气
+            </summary>
+            <param name="para">
+            {UserID:184}
+            </param>
+            <returns>
+            签到成功：[{"MessageCode":0,"Message":""}]
+            今日已签到：[{"MessageCode":60002,"Message":"今日已签到"}]
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.UserController.IsSignIn(HaiGame7.Model.MyModel.UserParameterModel)">
+            <summary>
+            判断今日是否签到
+            </summary>
+            <param name="para">
+            {UserID:184}
+            </param>
+            <returns>
+            今日未签到：[{"MessageCode":60003,"Message":"今日未签到"}]
+            今日已签到：[{"MessageCode":60002,"Message":"今日已签到"}]
+            </returns>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Controllers.UserController.Recharge(HaiGame7.Model.MyModel.UserRechargeParameterModel)">
+            <summary>
+            充值
+            </summary>
+            <param name="para">
+            {UserID:184,VirtualMoney:100}
+            </param>
+            <returns></returns>
+        </member>
+        <member name="T:HaiGame7.RestAPI.Filter.ExceptionFilter">
+            <summary>
+            异常处理Filter
+            </summary>
+        </member>
+        <member name="M:HaiGame7.RestAPI.Filter.ExceptionFilter.OnException(System.Web.Http.Filters.HttpActionExecutedContext)">
+            <summary>
+            重写OnException，记录错误log，返回系统错误
+            </summary>
+            <param name="actionExecutedContext"></param>
+        </member>
+    </members>
+</doc>

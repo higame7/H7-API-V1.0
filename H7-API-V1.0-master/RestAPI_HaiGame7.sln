@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HaiGame7.RestAPI", "RestAPI_HaiGame7\HaiGame7.RestAPI.csproj", "{25B28069-3D24-44D8-81FA-A3310EEE8731}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HaiGame7.Model", "HaiGame7.Model\HaiGame7.Model.csproj", "{821D0D00-D890-41E0-AC90-2F2439C2E619}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HaiGame7.BLL", "HaiGame.BLL\HaiGame7.BLL.csproj", "{03C0A6FE-CFD9-4D09-B23B-CDCC072EC275}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{25B28069-3D24-44D8-81FA-A3310EEE8731}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25B28069-3D24-44D8-81FA-A3310EEE8731}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25B28069-3D24-44D8-81FA-A3310EEE8731}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25B28069-3D24-44D8-81FA-A3310EEE8731}.Release|Any CPU.Build.0 = Release|Any CPU
+		{821D0D00-D890-41E0-AC90-2F2439C2E619}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{821D0D00-D890-41E0-AC90-2F2439C2E619}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{821D0D00-D890-41E0-AC90-2F2439C2E619}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{821D0D00-D890-41E0-AC90-2F2439C2E619}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03C0A6FE-CFD9-4D09-B23B-CDCC072EC275}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03C0A6FE-CFD9-4D09-B23B-CDCC072EC275}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03C0A6FE-CFD9-4D09-B23B-CDCC072EC275}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03C0A6FE-CFD9-4D09-B23B-CDCC072EC275}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,45 @@
+@using System.Web.Http
+@using System.Web.Http.Controllers
+@using System.Web.Http.Description
+@using System.Collections.ObjectModel
+@using RestAPI_HaiGame7.Areas.HelpPage.Models
+@model Collection<ApiDescription>
+
+@{
+    ViewBag.Title = "氦7 Restful API -V1.0 说明文档";
+
+    // Group APIs by controller
+    ILookup<HttpControllerDescriptor, ApiDescription> apiGroups = Model.ToLookup(api => api.ActionDescriptor.ControllerDescriptor);
+}
+
+<link type="text/css" href="~/Areas/HelpPage/HelpPage.css" rel="stylesheet" />
+<header class="help-page">
+    <div class="content-wrapper">
+        <div class="float-left">
+            <h1>@ViewBag.Title</h1>
+        </div>
+    </div>
+</header>
+<div id="body" class="help-page">
+    <section class="featured">
+        <div class="content-wrapper">
+            <h2>说明</h2>
+            <p>
+                描述氦7各个API的功能 <br /><br />
+                <span class="red">注意：</span><br />
+                ※所有请求路径加参数?accesstoken=XXXXX<br />
+                例如："http://api.haigame7.com/v1/user/login?accesstoken=ABC12abc" <br /><br />
+                ※公用错误信息<br />
+                1.系统错误：{"MessageCode":40001,"Message":"system error"} <br />
+                2.没有AccessToken：{"MessageCode":40002,"Message":"no accesstoken"} <br />
+                3.AccessToken 无效：{"MessageCode":40003,"Message":"invalid accesstoken"} <br />
+</p>
+        </div>
+    </section>
+    <section class="content-wrapper main-content clear-fix">
+        @foreach (var group in apiGroups)
+        {
+            @Html.DisplayFor(m => group, "ApiGroup")
+        }
+    </section>
+</div>
